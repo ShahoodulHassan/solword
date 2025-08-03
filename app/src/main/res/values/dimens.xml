@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="rv_padding_x">2.4dp</dimen>
+    <dimen name="rv_padding_y">2dp</dimen>
+    <dimen name="dp_24">24dp</dimen>
+    <dimen name="dp_3">3dp</dimen>
+    <dimen name="dp_4">4dp</dimen>
+    <dimen name="dp_56">56dp</dimen>
+    <dimen name="dp_16">16dp</dimen>
+    <dimen name="dp_32">32dp</dimen>
+
+    <dimen name="corner_radius_huge">16dp</dimen>
+    <dimen name="corner_radius_medium">6dp</dimen>
+    <dimen name="corner_radius_regular">4dp</dimen>
+    <dimen name="corner_radius_small">1dp</dimen>
+
+    <dimen name="corner_radius_bottom_sheet">@dimen/dp_24</dimen>
+    <dimen name="corner_radius_app_wide">@dimen/corner_radius_medium</dimen>
+    <dimen name="banner_height">50dp</dimen>
+    <dimen name="gradient_width">50dp</dimen>
+    <dimen name="dp_40">40dp</dimen>
+    <dimen name="size_input_fab">60dp</dimen>
+
+</resources>

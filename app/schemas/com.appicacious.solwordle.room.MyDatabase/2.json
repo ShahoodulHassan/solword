@@ -1,0 +1,140 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 2,
+    "identityHash": "d06a8ca46778f293213d5a81cb430367",
+    "entities": [
+      {
+        "tableName": "wordles",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`_id` INTEGER NOT NULL, `wordTitle` TEXT NOT NULL, `region` TEXT NOT NULL, `l1` TEXT NOT NULL, `l2` TEXT NOT NULL, `l3` TEXT NOT NULL, `l4` TEXT NOT NULL, `l5` TEXT NOT NULL, `l6` TEXT NOT NULL, `l7` TEXT NOT NULL, `l8` TEXT NOT NULL, `l9` TEXT NOT NULL, `l10` TEXT NOT NULL, `l11` TEXT NOT NULL, `l12` TEXT NOT NULL, `l13` TEXT NOT NULL, `l14` TEXT NOT NULL, PRIMARY KEY(`_id`))",
+        "fields": [
+          {
+            "fieldPath": "_id",
+            "columnName": "_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "wordTitle",
+            "columnName": "wordTitle",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "region",
+            "columnName": "region",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "l1",
+            "columnName": "l1",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "l2",
+            "columnName": "l2",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "l3",
+            "columnName": "l3",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "l4",
+            "columnName": "l4",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "l5",
+            "columnName": "l5",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "l6",
+            "columnName": "l6",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "l7",
+            "columnName": "l7",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "l8",
+            "columnName": "l8",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "l9",
+            "columnName": "l9",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "l10",
+            "columnName": "l10",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "l11",
+            "columnName": "l11",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "l12",
+            "columnName": "l12",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "l13",
+            "columnName": "l13",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "l14",
+            "columnName": "l14",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "_id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [
+          {
+            "name": "index_wordles_wordTitle",
+            "unique": true,
+            "columnNames": [
+              "wordTitle"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_wordles_wordTitle` ON `${TABLE_NAME}` (`wordTitle`)"
+          }
+        ],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'd06a8ca46778f293213d5a81cb430367')"
+    ]
+  }
+}

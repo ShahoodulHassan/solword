@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/cl_cell_container"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_cell_blank"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--android:lines="1" is important for autosize code to work-->
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_cell"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        tools:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        tools:background="@color/color_green"
+        android:textSize="32sp"
+        android:textColor="@android:color/white"
+        android:fontFamily="@font/open_sans_semibold"
+        android:textAllCaps="true"
+        android:gravity="center"
+        android:lines="1"
+        tools:text="Q"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/mb_cell"
+        style="@style/CellStyle"
+        android:visibility="gone"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:backgroundTint="@color/color_grey"
+        tools:text="Q" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

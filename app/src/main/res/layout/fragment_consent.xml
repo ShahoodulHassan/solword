@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:background="@color/color_splash_background"
+    tools:context=".fragments.ConsentFragment">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/iv_about_app_icon"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/dp_16"
+        android:elevation="8dp"
+        android:outlineProvider="bounds"
+        android:scaleType="centerInside"
+        app:layout_constraintBottom_toTopOf="@id/tv_consent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintWidth_percent="0.45"
+        app:shapeAppearanceOverlay="@style/roundedImageView"
+        app:srcCompat="@drawable/playstore" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_consent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_24"
+        android:layout_marginBottom="@dimen/dp_16"
+        android:layout_marginHorizontal="@dimen/dp_16"
+        app:layout_constrainedWidth="true"
+        android:fontFamily="@font/open_sans"
+        android:lineSpacingMultiplier="1.1"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@id/bt_accept"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_about_app_icon"
+        tools:text="Before proceeding further, \nplease read and accept the \nPrivacy policy \nand \nTerms &amp; conditions" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/bt_accept"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_16"
+        android:fontFamily="@font/open_sans"
+        android:text="accept"
+        android:textColor="?colorSecondaryVariant"
+        android:textStyle="bold"
+        app:cornerRadius="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/tv_consent"
+        app:layout_constraintStart_toStartOf="@id/tv_consent"
+        app:layout_constraintTop_toBottomOf="@id/tv_consent"
+        app:strokeColor="@color/colorText"
+        app:strokeWidth="0.7dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/bt_leave"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_16"
+        android:fontFamily="@font/open_sans"
+        android:text="leave"
+        android:textColor="?colorSecondaryVariant"
+        android:textStyle="bold"
+        app:cornerRadius="4dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/bt_accept"
+        app:layout_constraintEnd_toStartOf="@id/bt_accept"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:strokeColor="@color/colorText"
+        app:strokeWidth="0.7dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

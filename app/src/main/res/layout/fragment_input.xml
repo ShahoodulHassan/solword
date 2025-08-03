@@ -1,0 +1,590 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_parent_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.InputFragment">
+
+    <include
+        android:id="@+id/appbar"
+        layout="@layout/appbar" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_label_word_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/open_sans"
+            android:paddingHorizontal="@dimen/rv_padding_x"
+            android:paddingTop="16dp"
+            android:paddingBottom="5dp"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@id/rv_cells"
+            app:layout_constraintStart_toStartOf="@id/rv_cells"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="5 letter words" />
+
+        <!--  paddingBottom should be equal to the size of FAB, so that RV
+        doesn't hide behind it      -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_cells"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="8dp"
+            android:clipToPadding="false"
+            android:overScrollMode="ifContentScrolls"
+            android:paddingHorizontal="@dimen/rv_padding_x"
+            android:paddingTop="@dimen/rv_padding_x"
+            android:paddingBottom="@dimen/size_input_fab"
+            android:scrollbars="none"
+            app:layout_constrainedHeight="true"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintBottom_toTopOf="@id/max_banner"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_label_word_size"
+            app:layout_constraintVertical_bias="0"
+            app:layout_constraintWidth_percent="0.95"
+            tools:itemCount="30"
+            tools:layoutManager="GridLayoutManager"
+            tools:listitem="@layout/item_cell"
+            tools:spanCount="5" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/rv_cells"
+            app:layout_constraintEnd_toEndOf="@id/rv_cells"
+            android:contentDescription="Random word"
+            android:src="@drawable/ic_dice_48dp"
+            app:tint="@android:color/white"
+            app:maxImageSize="30dp"
+            app:fabCustomSize="@dimen/size_input_fab"
+            android:visibility="gone"
+            />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/cl_keyboard"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_row_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <GridLayout
+                    android:id="@+id/gl_rows"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal"
+                    android:paddingStart="8dp"
+                    android:paddingTop="8dp"
+                    android:paddingEnd="2dp"
+                    android:paddingBottom="2dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <!--                    <com.google.android.material.button.MaterialButton-->
+                    <!--                        android:id="@+id/mb_11"-->
+                    <!--                        style="@style/CellButtonStyle"-->
+                    <!--                        tools:text="Q"-->
+                    <!--                        tools:backgroundTint="@android:color/holo_green_dark"-->
+                    <!--                        />-->
+
+
+                    <!--                    <com.google.android.material.button.MaterialButton-->
+                    <!--                        android:id="@+id/mb_12"-->
+                    <!--                        style="@style/CellButtonStyle"-->
+                    <!--                        tools:text="Q"-->
+                    <!--                        />-->
+                    <!--                    <com.google.android.material.button.MaterialButton-->
+                    <!--                        android:id="@+id/mb_13"-->
+                    <!--                        style="@style/CellButtonStyle"-->
+                    <!--                        tools:text="Q"-->
+                    <!--                        tools:backgroundTint="@android:color/holo_orange_light"-->
+                    <!--                        />-->
+
+                    <!--                    <com.google.android.material.button.MaterialButton-->
+                    <!--                        android:id="@+id/mb_14"-->
+                    <!--                        style="@style/CellButtonStyle"-->
+                    <!--                        tools:text="W"-->
+                    <!--                        />-->
+
+                    <!--                    <com.google.android.material.button.MaterialButton-->
+                    <!--                        android:id="@+id/mb_15"-->
+                    <!--                        style="@style/CellButtonStyle"-->
+                    <!--                        tools:text="Q"-->
+                    <!--                        />-->
+
+                    <!--                    <com.google.android.material.button.MaterialButton-->
+                    <!--                        android:id="@+id/mb_21"-->
+                    <!--                        style="@style/CellButtonStyle"-->
+                    <!--                        tools:text="W"-->
+                    <!--                        />-->
+
+                    <!--                    <com.google.android.material.button.MaterialButton-->
+                    <!--                        android:id="@+id/mb_22"-->
+                    <!--                        style="@style/CellButtonStyle"-->
+                    <!--                        tools:text="Q"-->
+                    <!--                        />-->
+
+                    <!--                    <com.google.android.material.button.MaterialButton-->
+                    <!--                        android:id="@+id/mb_23"-->
+                    <!--                        style="@style/CellButtonStyle"-->
+                    <!--                        tools:text="W"-->
+                    <!--                        />-->
+                    <!--                    <com.google.android.material.button.MaterialButton-->
+                    <!--                        android:id="@+id/mb_24"-->
+                    <!--                        style="@style/CellButtonStyle"-->
+                    <!--                        tools:text="Q"-->
+                    <!--                        />-->
+
+                    <!--                    <com.google.android.material.button.MaterialButton-->
+                    <!--                        android:id="@+id/mb_25"-->
+                    <!--                        style="@style/CellButtonStyle"-->
+                    <!--                        tools:text="W"-->
+                    <!--                        />-->
+
+                    <!--                    <com.google.android.material.button.MaterialButton-->
+                    <!--                        android:id="@+id/mb_31"-->
+                    <!--                        style="@style/CellButtonStyle"-->
+                    <!--                        tools:text="Q"-->
+                    <!--                        />-->
+
+                    <!--                    <com.google.android.material.button.MaterialButton-->
+                    <!--                        android:id="@+id/mb_32"-->
+                    <!--                        style="@style/CellButtonStyle"-->
+                    <!--                        tools:text="W"-->
+                    <!--                        />-->
+
+                    <!--                    <com.google.android.material.button.MaterialButton-->
+                    <!--                        android:id="@+id/mb_33"-->
+                    <!--                        style="@style/CellButtonStyle"-->
+                    <!--                        tools:text="Q"-->
+                    <!--                        />-->
+
+                    <!--                    <com.google.android.material.button.MaterialButton-->
+                    <!--                        android:id="@+id/mb_34"-->
+                    <!--                        style="@style/CellButtonStyle"-->
+                    <!--                        tools:text="W"-->
+                    <!--                        />-->
+                    <!--                    <com.google.android.material.button.MaterialButton-->
+                    <!--                        android:id="@+id/mb_35"-->
+                    <!--                        style="@style/CellButtonStyle"-->
+                    <!--                        tools:text="Q"-->
+                    <!--                        />-->
+
+                    <!--                    <com.google.android.material.button.MaterialButton-->
+                    <!--                        android:id="@+id/mb_41"-->
+                    <!--                        style="@style/CellButtonStyle"-->
+                    <!--                        tools:text="W"-->
+                    <!--                        />-->
+
+                    <!--                    <com.google.android.material.button.MaterialButton-->
+                    <!--                        android:id="@+id/mb_42"-->
+                    <!--                        style="@style/CellButtonStyle"-->
+                    <!--                        tools:text="Q"-->
+                    <!--                        />-->
+
+                    <!--                    <com.google.android.material.button.MaterialButton-->
+                    <!--                        android:id="@+id/mb_43"-->
+                    <!--                        style="@style/CellButtonStyle"-->
+                    <!--                        tools:text="W"-->
+                    <!--                        />-->
+
+                    <!--                    <com.google.android.material.button.MaterialButton-->
+                    <!--                        android:id="@+id/mb_44"-->
+                    <!--                        style="@style/CellButtonStyle"-->
+                    <!--                        tools:text="Q"-->
+                    <!--                        />-->
+
+                    <!--                    <com.google.android.material.button.MaterialButton-->
+                    <!--                        android:id="@+id/mb_45"-->
+                    <!--                        style="@style/CellButtonStyle"-->
+                    <!--                        tools:text="W"-->
+                    <!--                        />-->
+                    <!--                    <com.google.android.material.button.MaterialButton-->
+                    <!--                        android:id="@+id/mb_51"-->
+                    <!--                        style="@style/CellButtonStyle"-->
+                    <!--                        tools:text="Q"-->
+                    <!--                        />-->
+
+                    <!--                    <com.google.android.material.button.MaterialButton-->
+                    <!--                        android:id="@+id/mb_52"-->
+                    <!--                        style="@style/CellButtonStyle"-->
+                    <!--                        tools:text="W"-->
+                    <!--                        />-->
+
+                    <!--                    <com.google.android.material.button.MaterialButton-->
+                    <!--                        android:id="@+id/mb_53"-->
+                    <!--                        style="@style/CellButtonStyle"-->
+                    <!--                        tools:text="Q"-->
+                    <!--                        />-->
+
+                    <!--                    <com.google.android.material.button.MaterialButton-->
+                    <!--                        android:id="@+id/mb_54"-->
+                    <!--                        style="@style/CellButtonStyle"-->
+                    <!--                        tools:text="W"-->
+                    <!--                        />-->
+
+                    <!--                    <com.google.android.material.button.MaterialButton-->
+                    <!--                        android:id="@+id/mb_55"-->
+                    <!--                        style="@style/CellButtonStyle"-->
+                    <!--                        tools:text="Q"-->
+                    <!--                        />-->
+
+                    <!--                    <com.google.android.material.button.MaterialButton-->
+                    <!--                        android:id="@+id/mb_61"-->
+                    <!--                        style="@style/CellButtonStyle"-->
+                    <!--                        tools:text="W"-->
+                    <!--                        />-->
+                    <!--                    <com.google.android.material.button.MaterialButton-->
+                    <!--                        android:id="@+id/mb_62"-->
+                    <!--                        style="@style/CellButtonStyle"-->
+                    <!--                        tools:text="Q"-->
+                    <!--                        />-->
+
+                    <!--                    <com.google.android.material.button.MaterialButton-->
+                    <!--                        android:id="@+id/mb_63"-->
+                    <!--                        style="@style/CellButtonStyle"-->
+                    <!--                        tools:text="W"-->
+                    <!--                        />-->
+
+                    <!--                    <com.google.android.material.button.MaterialButton-->
+                    <!--                        android:id="@+id/mb_64"-->
+                    <!--                        style="@style/CellButtonStyle"-->
+                    <!--                        tools:text="Q"-->
+                    <!--                        />-->
+
+                    <!--                    <com.google.android.material.button.MaterialButton-->
+                    <!--                        android:id="@+id/mb_65"-->
+                    <!--                        style="@style/CellButtonStyle"-->
+                    <!--                        tools:text="W"-->
+                    <!--                        />-->
+
+                </GridLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+        <com.applovin.mediation.ads.MaxAdView
+            xmlns:maxads="http://schemas.applovin.com/android/1.0"
+            android:id="@+id/max_banner"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/banner_height"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/cl_keyboard"
+            maxads:adUnitId="784472278e9fa7e6"
+            tools:visibility="visible" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_keyboard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <!-- FIRST ROW -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mb_q"
+                style="@style/KeyboardButtonStyle"
+                android:layout_marginStart="8dp"
+                android:text="Q"
+                app:layout_constraintEnd_toStartOf="@id/mb_w"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mb_w"
+                style="@style/KeyboardButtonStyle"
+                android:text="W"
+                app:layout_constraintEnd_toStartOf="@id/mb_e"
+                app:layout_constraintStart_toEndOf="@id/mb_q"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mb_e"
+                style="@style/KeyboardButtonStyle"
+                android:text="E"
+                app:layout_constraintEnd_toStartOf="@id/mb_r"
+                app:layout_constraintStart_toEndOf="@id/mb_w"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mb_r"
+                style="@style/KeyboardButtonStyle"
+                android:text="R"
+                app:layout_constraintEnd_toStartOf="@id/mb_t"
+                app:layout_constraintStart_toEndOf="@id/mb_e"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mb_t"
+                style="@style/KeyboardButtonStyle"
+                android:text="T"
+                app:layout_constraintEnd_toStartOf="@id/mb_y"
+                app:layout_constraintStart_toEndOf="@id/mb_r"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mb_y"
+                style="@style/KeyboardButtonStyle"
+                android:text="Y"
+                app:layout_constraintEnd_toStartOf="@id/mb_u"
+                app:layout_constraintStart_toEndOf="@id/mb_t"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mb_u"
+                style="@style/KeyboardButtonStyle"
+                android:text="U"
+                app:layout_constraintEnd_toStartOf="@id/mb_i"
+                app:layout_constraintStart_toEndOf="@id/mb_y"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mb_i"
+                style="@style/KeyboardButtonStyle"
+                android:text="I"
+                app:layout_constraintEnd_toStartOf="@id/mb_o"
+                app:layout_constraintStart_toEndOf="@id/mb_u"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mb_o"
+                style="@style/KeyboardButtonStyle"
+                android:text="O"
+                app:layout_constraintEnd_toStartOf="@id/mb_p"
+                app:layout_constraintStart_toEndOf="@id/mb_i"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mb_p"
+                style="@style/KeyboardButtonStyle"
+                android:layout_marginEnd="8dp"
+                android:text="P"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/mb_o"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <!-- SECOND ROW -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mb_a"
+                style="@style/KeyboardButtonStyle"
+                android:layout_marginStart="8dp"
+                android:text="A"
+                app:layout_constraintEnd_toStartOf="@id/mb_s"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mb_q" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mb_s"
+                style="@style/KeyboardButtonStyle"
+                android:text="S"
+                app:layout_constraintEnd_toStartOf="@id/mb_d"
+                app:layout_constraintStart_toEndOf="@id/mb_a"
+                app:layout_constraintTop_toBottomOf="@id/mb_q" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mb_d"
+                style="@style/KeyboardButtonStyle"
+                android:text="D"
+                app:layout_constraintEnd_toStartOf="@id/mb_f"
+                app:layout_constraintStart_toEndOf="@id/mb_s"
+                app:layout_constraintTop_toBottomOf="@id/mb_q" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mb_f"
+                style="@style/KeyboardButtonStyle"
+                android:text="F"
+                app:layout_constraintEnd_toStartOf="@id/mb_g"
+                app:layout_constraintStart_toEndOf="@id/mb_d"
+                app:layout_constraintTop_toBottomOf="@id/mb_q" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mb_g"
+                style="@style/KeyboardButtonStyle"
+                android:text="G"
+                app:layout_constraintEnd_toStartOf="@id/mb_h"
+                app:layout_constraintStart_toEndOf="@id/mb_f"
+                app:layout_constraintTop_toBottomOf="@id/mb_q" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mb_h"
+                style="@style/KeyboardButtonStyle"
+                android:text="H"
+                app:layout_constraintEnd_toStartOf="@id/mb_j"
+                app:layout_constraintStart_toEndOf="@id/mb_g"
+                app:layout_constraintTop_toBottomOf="@id/mb_q" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mb_j"
+                style="@style/KeyboardButtonStyle"
+                android:text="J"
+                app:layout_constraintEnd_toStartOf="@id/mb_k"
+                app:layout_constraintStart_toEndOf="@id/mb_h"
+                app:layout_constraintTop_toBottomOf="@id/mb_q" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mb_k"
+                style="@style/KeyboardButtonStyle"
+                android:text="K"
+                app:layout_constraintEnd_toStartOf="@id/mb_l"
+                app:layout_constraintStart_toEndOf="@id/mb_j"
+                app:layout_constraintTop_toBottomOf="@id/mb_q" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mb_l"
+                style="@style/KeyboardButtonStyle"
+                android:layout_marginEnd="8dp"
+                android:text="L"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/mb_k"
+                app:layout_constraintTop_toBottomOf="@id/mb_q" />
+
+
+            <!-- THIRD ROW -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mb_guess"
+                style="@style/KeyboardButtonStyle"
+                android:layout_width="0dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="16dp"
+                android:letterSpacing="0.0"
+                android:paddingStart="0dp"
+                android:paddingEnd="0dp"
+                android:text="GUESS"
+                app:backgroundTint="@color/color_guess_key"
+                app:layout_constraintBottom_toTopOf="@id/tv_dev_info"
+                app:layout_constraintEnd_toStartOf="@id/mb_z"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mb_a"
+                app:layout_constraintWidth_max="58dp"
+                app:layout_constraintWidth_percent="0.2"
+                app:rippleColor="@color/color_keys" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mb_z"
+                style="@style/KeyboardButtonStyle"
+                android:text="Z"
+                app:layout_constraintEnd_toStartOf="@id/mb_x"
+                app:layout_constraintStart_toEndOf="@id/mb_guess"
+                app:layout_constraintTop_toBottomOf="@id/mb_a" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mb_x"
+                style="@style/KeyboardButtonStyle"
+                android:text="X"
+                app:layout_constraintEnd_toStartOf="@id/mb_c"
+                app:layout_constraintStart_toEndOf="@id/mb_z"
+                app:layout_constraintTop_toBottomOf="@id/mb_a" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mb_c"
+                style="@style/KeyboardButtonStyle"
+                android:text="C"
+                app:layout_constraintEnd_toStartOf="@id/mb_v"
+                app:layout_constraintStart_toEndOf="@id/mb_x"
+                app:layout_constraintTop_toBottomOf="@id/mb_a" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mb_v"
+                style="@style/KeyboardButtonStyle"
+                android:text="V"
+                app:layout_constraintEnd_toStartOf="@id/mb_b"
+                app:layout_constraintStart_toEndOf="@id/mb_c"
+                app:layout_constraintTop_toBottomOf="@id/mb_a" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mb_b"
+                style="@style/KeyboardButtonStyle"
+                android:text="B"
+                app:layout_constraintEnd_toStartOf="@id/mb_n"
+                app:layout_constraintStart_toEndOf="@id/mb_v"
+                app:layout_constraintTop_toBottomOf="@id/mb_a" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mb_n"
+                style="@style/KeyboardButtonStyle"
+                android:text="N"
+                app:layout_constraintEnd_toStartOf="@id/mb_m"
+                app:layout_constraintStart_toEndOf="@id/mb_b"
+                app:layout_constraintTop_toBottomOf="@id/mb_a" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/mb_m"
+                style="@style/KeyboardButtonStyle"
+                android:text="M"
+                app:layout_constraintEnd_toStartOf="@id/fl_back"
+                app:layout_constraintStart_toEndOf="@id/mb_n"
+                app:layout_constraintTop_toBottomOf="@id/mb_a" />
+
+            <!-- Elevation to 2dp has been added to match its height with other buttons -->
+            <FrameLayout
+                android:id="@+id/fl_back"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginEnd="8dp"
+                android:elevation="2dp"
+                android:background="@drawable/bg_round_4dp"
+                app:layout_constraintBottom_toBottomOf="@id/mb_m"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/mb_m"
+                app:layout_constraintTop_toTopOf="@id/mb_m">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_back"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:padding="12dp"
+                    android:scaleType="fitCenter"
+                    app:layout_constraintWidth_max="50dp"
+                    app:srcCompat="@drawable/ic_outline_backspace_24"
+
+                    />
+
+            </FrameLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_dev_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="6dp"
+                android:fontFamily="@font/poiret_one"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:text="@string/dev_by"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

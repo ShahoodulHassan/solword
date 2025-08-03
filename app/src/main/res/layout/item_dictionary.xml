@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<!--SHOW A TICK BOX WHICH IS TICKED FOR THE SELECTED OPTION-->
+<com.google.android.material.textview.MaterialTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tv_dictionary_name"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_56"
+    android:paddingEnd="@dimen/dp_16"
+    android:paddingStart="@dimen/dp_16"
+    android:drawablePadding="@dimen/dp_16"
+    android:background="?attr/selectableItemBackground"
+    android:gravity="start|center_vertical"
+    tools:text="Oxford"
+    android:textColor="@android:color/black"
+    android:textSize="16sp" />

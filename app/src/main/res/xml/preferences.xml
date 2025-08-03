@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <!-- I'm using the same values as entries and entryValues   -->
+    <com.appicacious.solword.preferences.MyListPreference
+        app:key="@string/pref_key_word_size"
+        app:summary="@string/pref_summ_word_size"
+        app:title="@string/pref_title_word_size"
+        app:entries="@array/word_size_values"
+        app:entryValues="@array/word_size_values"
+        app:iconSpaceReserved="false"
+        app:selectable="true"/>
+
+    <com.appicacious.solword.preferences.MyListPreference
+        app:key="@string/pref_key_dictionary"
+        app:summary="@string/pref_summ_dictionary"
+        app:title="@string/pref_title_dictionary"
+        app:entries="@array/dictionary_values"
+        app:entryValues="@array/dictionary_keys"
+        app:iconSpaceReserved="false"
+        app:selectable="true"/>
+
+    <com.appicacious.solword.preferences.MySwitchPreference
+        app:key="@string/pref_key_vibration"
+        app:title="@string/pref_title_vibration"
+        app:iconSpaceReserved="false"
+        app:defaultValue="true"
+        app:summaryOff="@string/pref_summ_off_vibration"
+        app:summaryOn="@string/pref_summ_on_vibration"
+        />
+
+</PreferenceScreen>

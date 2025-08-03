@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1027214952781",
+    "project_id": "solword-5af27",
+    "storage_bucket": "solword-5af27.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1027214952781:android:12e6519d9078dc96c04f04",
+        "android_client_info": {
+          "package_name": "com.appicacious.solword"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1027214952781-2dgpil0ue1u80dhndjhrjo568hq9tf3b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.appicacious.solword",
+            "certificate_hash": "34b406770f008a0c4c095c24998079b2561e60e9"
+          }
+        },
+        {
+          "client_id": "1027214952781-d64rhoseistr1c1pu70nvluefemjiv90.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChSkr2la00lr61AGLZNgJLjOHY9QwzE9M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1027214952781-d64rhoseistr1c1pu70nvluefemjiv90.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

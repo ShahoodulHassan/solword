@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <integer name="animDuration">375</integer>
+    <integer name="animDurationDelay">425</integer>
+    <integer name="animStartOffset">150</integer>
+    <integer name="fadeAnimStartOffset">250</integer>
+    <integer name="fadeAnimDuration">@android:integer/config_longAnimTime</integer>
+    <integer name="animTimeVert">275</integer>
+    <integer name="animTimeBoolDialog">150</integer>
+    <integer name="animTimeFullScreenDialog">@android:integer/config_shortAnimTime</integer>
+
+
+    <integer name="colors_default">100</integer>
+
+    <integer name="notes_lines">4</integer>
+
+</resources>

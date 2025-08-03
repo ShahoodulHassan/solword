@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:id="@+id/menu_get_premium"
+        android:title="@string/label_get_premium_version"
+        app:showAsAction="never"
+        />
+
+    <item
+        android:id="@+id/menu_consume"
+        android:title="Consume"
+        app:showAsAction="never"
+        />
+
+    <item
+        android:id="@+id/menu_dictionary"
+        android:title="@string/title_select_dictionary"
+        app:showAsAction="never"
+        android:icon="@drawable/ic_dictionary_24dp"
+        app:iconTint="@color/colorIcon"
+        />
+
+    <item
+        android:id="@+id/menu_help"
+        android:title="@string/menu_title_help"
+        app:showAsAction="never"
+        />
+
+
+</menu>
