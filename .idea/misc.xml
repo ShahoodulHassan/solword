@@ -1,68 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DesignSurface">
-    <option name="filePathToZoomLevelMap">
-      <map>
-        <entry key="..\:/AndroidStudioProjects/Solword/app/src/main/res/drawable/bg_and_round_4dp.xml" value="0.1765" />
-        <entry key="..\:/AndroidStudioProjects/Solword/app/src/main/res/layout/activity_main.xml" value="0.20384615384615384" />
-        <entry key="..\:/AndroidStudioProjects/Solword/app/src/main/res/layout/appbar.xml" value="0.20384615384615384" />
-        <entry key="..\:/AndroidStudioProjects/Solword/app/src/main/res/layout/dialog_dictionary_select.xml" value="0.20384615384615384" />
-        <entry key="..\:/AndroidStudioProjects/Solword/app/src/main/res/layout/dialog_error_logs.xml" value="0.20384615384615384" />
-        <entry key="..\:/AndroidStudioProjects/Solword/app/src/main/res/layout/fragment_about.xml" value="0.20384615384615384" />
-        <entry key="..\:/AndroidStudioProjects/Solword/app/src/main/res/layout/fragment_consent.xml" value="0.20384615384615384" />
-        <entry key="..\:/AndroidStudioProjects/Solword/app/src/main/res/layout/fragment_guess.xml" value="0.20384615384615384" />
-        <entry key="..\:/AndroidStudioProjects/Solword/app/src/main/res/layout/fragment_input.xml" value="0.20384615384615384" />
-        <entry key="..\:/AndroidStudioProjects/Solword/app/src/main/res/layout/fragment_intro.xml" value="0.20384615384615384" />
-        <entry key="..\:/AndroidStudioProjects/Solword/app/src/main/res/layout/fragment_settings.xml" value="0.20384615384615384" />
-        <entry key="..\:/AndroidStudioProjects/Solword/app/src/main/res/layout/fragment_slide.xml" value="0.20384615384615384" />
-        <entry key="..\:/AndroidStudioProjects/Solword/app/src/main/res/layout/fragment_splash.xml" value="0.20384615384615384" />
-        <entry key="..\:/AndroidStudioProjects/Solword/app/src/main/res/layout/item_cell.xml" value="0.20384615384615384" />
-        <entry key="..\:/AndroidStudioProjects/Solword/app/src/main/res/layout/item_dictionary.xml" value="0.20384615384615384" />
-        <entry key="..\:/AndroidStudioProjects/Solword/app/src/main/res/layout/item_guess.xml" value="0.20384615384615384" />
-        <entry key="..\:/AndroidStudioProjects/Solword/app/src/main/res/layout/item_guess_ad.xml" value="0.20384615384615384" />
-        <entry key="..\:/AndroidStudioProjects/Solword/app/src/main/res/layout/item_guess_filter.xml" value="0.20384615384615384" />
-        <entry key="..\:/AndroidStudioProjects/Solword/app/src/main/res/menu/menu_guess.xml" value="0.20384615384615384" />
-        <entry key="..\:/AndroidStudioProjects/Solword/app/src/main/res/menu/menu_input.xml" value="0.20384615384615384" />
-        <entry key="..\:/AndroidStudioProjects/Solword/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1765" />
-        <entry key="..\:/AndroidStudioProjects/Solword/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1765" />
-        <entry key="..\:/AndroidStudioProjects/Solword/app/src/main/res/xml/preferences.xml" value="0.264" />
-        <entry key="..\:/AndroidStudioProjects/Solwordle/app/src/main/res/drawable/bg_and_round_4dp.xml" value="0.166" />
-        <entry key="..\:/AndroidStudioProjects/Solwordle/app/src/main/res/drawable/bg_cell_blank.xml" value="0.1255" />
-        <entry key="..\:/AndroidStudioProjects/Solwordle/app/src/main/res/drawable/bg_filters.xml" value="0.1495" />
-        <entry key="..\:/AndroidStudioProjects/Solwordle/app/src/main/res/drawable/bg_image.xml" value="0.167" />
-        <entry key="..\:/AndroidStudioProjects/Solwordle/app/src/main/res/drawable/bg_round.xml" value="0.17" />
-        <entry key="..\:/AndroidStudioProjects/Solwordle/app/src/main/res/drawable/bg_round_2dp.xml" value="0.17" />
-        <entry key="..\:/AndroidStudioProjects/Solwordle/app/src/main/res/drawable/bg_round_4dp.xml" value="0.1255" />
-        <entry key="..\:/AndroidStudioProjects/Solwordle/app/src/main/res/drawable/bg_touch_ripple.xml" value="0.166" />
-        <entry key="..\:/AndroidStudioProjects/Solwordle/app/src/main/res/drawable/dark_radius.xml" value="0.167" />
-        <entry key="..\:/AndroidStudioProjects/Solwordle/app/src/main/res/drawable/ic_casino_24.xml" value="0.167" />
-        <entry key="..\:/AndroidStudioProjects/Solwordle/app/src/main/res/drawable/ic_dice_48dp.xml" value="0.167" />
-        <entry key="..\:/AndroidStudioProjects/Solwordle/app/src/main/res/drawable/ic_outline_backspace_16.xml" value="0.17" />
-        <entry key="..\:/AndroidStudioProjects/Solwordle/app/src/main/res/drawable/ic_twitter_48dp.xml" value="0.167" />
-        <entry key="..\:/AndroidStudioProjects/Solwordle/app/src/main/res/layout/activity_main.xml" value="0.2" />
-        <entry key="..\:/AndroidStudioProjects/Solwordle/app/src/main/res/layout/appbar.xml" value="0.20384615384615384" />
-        <entry key="..\:/AndroidStudioProjects/Solwordle/app/src/main/res/layout/fragment_about.xml" value="0.264" />
-        <entry key="..\:/AndroidStudioProjects/Solwordle/app/src/main/res/layout/fragment_consent.xml" value="0.20384615384615384" />
-        <entry key="..\:/AndroidStudioProjects/Solwordle/app/src/main/res/layout/fragment_guess.xml" value="0.264" />
-        <entry key="..\:/AndroidStudioProjects/Solwordle/app/src/main/res/layout/fragment_input.xml" value="0.4" />
-        <entry key="..\:/AndroidStudioProjects/Solwordle/app/src/main/res/layout/fragment_intro.xml" value="0.20384615384615384" />
-        <entry key="..\:/AndroidStudioProjects/Solwordle/app/src/main/res/layout/fragment_settings.xml" value="0.20384615384615384" />
-        <entry key="..\:/AndroidStudioProjects/Solwordle/app/src/main/res/layout/fragment_slide.xml" value="0.264" />
-        <entry key="..\:/AndroidStudioProjects/Solwordle/app/src/main/res/layout/fragment_splash.xml" value="0.20384615384615384" />
-        <entry key="..\:/AndroidStudioProjects/Solwordle/app/src/main/res/layout/item_cell.xml" value="0.2484375" />
-        <entry key="..\:/AndroidStudioProjects/Solwordle/app/src/main/res/layout/item_dictionary.xml" value="0.20384615384615384" />
-        <entry key="..\:/AndroidStudioProjects/Solwordle/app/src/main/res/layout/item_guess.xml" value="0.20384615384615384" />
-        <entry key="..\:/AndroidStudioProjects/Solwordle/app/src/main/res/layout/item_guess_ad.xml" value="0.20384615384615384" />
-        <entry key="..\:/AndroidStudioProjects/Solwordle/app/src/main/res/layout/item_guess_filter.xml" value="0.264" />
-        <entry key="..\:/AndroidStudioProjects/Solwordle/app/src/main/res/layout/test.xml" value="0.20384615384615384" />
-        <entry key="..\:/AndroidStudioProjects/Solwordle/app/src/main/res/menu/menu_guess.xml" value="0.20384615384615384" />
-        <entry key="..\:/AndroidStudioProjects/Solwordle/app/src/main/res/menu/menu_input.xml" value="0.20384615384615384" />
-        <entry key="..\:/AndroidStudioProjects/Solwordle/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.167" />
-        <entry key="..\:/AndroidStudioProjects/Solwordle/app/src/main/res/xml/preferences.xml" value="0.20384615384615384" />
-        <entry key="..\:/Users/shaho/AppData/Local/Android/Sdk/caches/transforms-3/93f202c91fba789de815e22e9ddef064/transformed/circleindicator-2.1.6/res/drawable/white_radius.xml" value="0.167" />
-      </map>
-    </option>
-  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="17" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
