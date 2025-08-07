@@ -7,8 +7,8 @@ import android.util.Log;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.NavBackStackEntry;
 import androidx.navigation.NavController;
+import androidx.navigation.NavDestination;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.appicacious.solword.R;
@@ -57,21 +57,40 @@ public abstract class NavigationActivity extends BaseActivity {
             if (isDebugMode()) {
                 navController.addOnDestinationChangedListener((navController1, navDestination,
                                                                bundle) -> {
-                    Log.d(TAG + TAG_NAV, String.format("onDestinationChanged: destId=%d, " +
-                                    "destName=%s, homeId=%d, homeName=%s",
-                            navDestination.getId(), navDestination.getDisplayName()
-                                    .replace("com.appicacious.solword:", ""),
-                            navController.getGraph().getStartDestinationId(),
-                            navController.getGraph().getStartDestDisplayName()
-                                    .replace("com.appicacious.solword", "")));
 
-                    int bsCount = navController.getBackQueue().size();
-                    Log.d(TAG + TAG_NAV, "onDestinationChanged: backStackCount=" + bsCount);
-                    for (NavBackStackEntry entry : navController.getBackQueue()) {
-                        Log.d(TAG + TAG_NAV, "onDestinationChanged: backStackEntry=" +
-                                entry.getDestination().getDisplayName()
-                                        .replace("com.appicacious.solword:", ""));
-                    }
+                    String destLabel = navDestination.getLabel() != null
+                            ? navDestination.getLabel().toString()
+                            : navDestination.getClass().getSimpleName();
+                    int startId = navController1.getGraph().getStartDestinationId();
+
+                    NavDestination startDest = navController1.getGraph().findNode(startId);
+                    String startLabel = startDest != null && startDest.getLabel() != null
+                            ? startDest.getLabel().toString()
+                            : "Start";
+
+                    Log.d(TAG + TAG_NAV, String.format(
+                            "onDestinationChanged:\ndestId=%d\ndestLabel=%s\nstartId=%d\nstartLabel=%s",
+                            navDestination.getId(),
+                            destLabel,
+                            startId,
+                            startLabel
+                    ));
+
+//                    Log.d(TAG + TAG_NAV, String.format("onDestinationChanged: destId=%d, " +
+//                                    "destName=%s, homeId=%d, homeName=%s",
+//                            navDestination.getId(), navDestination.getDisplayName()
+//                                    .replace("com.appicacious.solword:", ""),
+//                            navController.getGraph().getStartDestinationId(),
+//                            navController.getGraph().getStartDestDisplayName()
+//                                    .replace("com.appicacious.solword", "")));
+
+//                    int bsCount = navController.getBackQueue().size();
+//                    Log.d(TAG + TAG_NAV, "onDestinationChanged: backStackCount=" + bsCount);
+//                    for (NavBackStackEntry entry : navController.getBackQueue()) {
+//                        Log.d(TAG + TAG_NAV, "onDestinationChanged: backStackEntry=" +
+//                                entry.getDestination().getDisplayName()
+//                                        .replace("com.appicacious.solword:", ""));
+//                    }
                 });
             }
         } else {
