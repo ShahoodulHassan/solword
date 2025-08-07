@@ -5,12 +5,13 @@ plugins {
 }
 
 android {
-    compileSdk 33
+    namespace "com.appicacious.solword"
+    compileSdk 35
 
     defaultConfig {
         applicationId "com.appicacious.solword"
         minSdk 21
-        targetSdk 33
+        targetSdk 35
         versionCode 8
         versionName "1.0.1"
 
@@ -22,6 +23,10 @@ android {
         }
     }
 
+    buildFeatures {
+        buildConfig = true
+    }
+
     buildTypes {
         release {
             debuggable false
@@ -31,8 +36,8 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
 }
 
@@ -93,7 +98,12 @@ dependencies {
     implementation "com.android.billingclient:billing:$billing_version"
 
     // For in-app updates
-    implementation "com.google.android.play:core:$core_version"
+    implementation 'com.google.android.play:app-update:2.1.0'
+    implementation 'com.google.android.gms:play-services-tasks:18.0.2'
+
+    // In-app reviews
+    implementation 'com.google.android.play:review:2.0.2'
+
 
     // AppLovin Max
     implementation 'com.applovin:applovin-sdk:11.5.5' // 11.4.2
