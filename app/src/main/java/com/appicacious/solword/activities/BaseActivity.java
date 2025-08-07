@@ -26,7 +26,7 @@ import com.appicacious.solword.R;
 import com.appicacious.solword.architecture.MainViewModel;
 import com.appicacious.solword.interfaces.OnFragmentInteractionListener;
 import com.google.android.play.core.review.ReviewInfo;
-import com.google.android.play.core.tasks.Task;
+import com.google.android.gms.tasks.Task;
 
 public abstract class BaseActivity extends AppCompatActivity implements
         OnFragmentInteractionListener {

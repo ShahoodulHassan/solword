@@ -41,8 +41,7 @@ import com.appicacious.solword.dialog_fragments.DictionarySelectDialogFragment;
 import com.appicacious.solword.interfaces.OnDialogInteractionListener;
 import com.appicacious.solword.interfaces.OnFragmentInteractionListener;
 import com.appicacious.solword.models.Dictionary;
-import com.google.android.play.core.tasks.OnCompleteListener;
-import com.google.android.play.core.tasks.Task;
+import com.google.android.gms.tasks.Task;
 
 import java.util.ArrayList;
 import java.util.List;
