@@ -3,14 +3,15 @@
 buildscript {
 
     ext {
-        nav_version = "2.4.1"
+        nav_version = "2.7.1"
 //        lifecycle_version = "2.4.1"
+        kotlin_version = "1.8.22"
         coroutines_version = "1.6.0"
     }
 
     dependencies {
-        classpath "com.android.tools.build:gradle:7.0.4"
-        classpath 'com.google.gms:google-services:4.3.13'
+        classpath "com.android.tools.build:gradle:8.4.2"
+        classpath 'com.google.gms:google-services:4.4.3'
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version"
 
         // NOTE: Do not place your application dependencies here; they belong
@@ -20,12 +21,24 @@ buildscript {
 
 
 plugins {
-    id 'com.android.application' version '7.1.1' apply false
-    id 'com.android.library' version '7.1.1' apply false
+    id 'com.android.application' version '8.4.2' apply false
+    id 'com.android.library' version '8.4.2' apply false
+}
+
+allprojects {
+
+    // Force Kotlin version resolution to prevent duplicate class conflicts
+    configurations.configureEach {
+        resolutionStrategy {
+            force "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+            force "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+            force "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+        }
+    }
 }
 
 
 
-task clean(type: Delete) {
-    delete rootProject.buildDir
+tasks.register("clean", Delete) {
+    delete rootProject.layout.buildDirectory
 }
