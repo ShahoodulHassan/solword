@@ -61,34 +61,28 @@ public class GuessViewModel extends SavedStateAndroidViewModel {
 
 //        selectedGuessFilters.put(ALL, ALL_FILTER);
 
-        Function<Bundle, LiveData<List<Word>>> guessFunc = input -> {
+        // No paging
+        guessesLiveData = Transformations.switchMap(guessParams, input -> {
             repository.initGuessTask(input.getParcelableArrayList(KEY_CELLS),
                     input.getInt(KEY_COL_COUNT));
             return repository.getGuessesMedLiveData();
-        };
+        });
 
-        Function<Bundle, LiveData<PagedList<Word>>> guessFuncPaging2 = input -> {
+        // Paging 2
+        guessesPagedLiveData = Transformations.switchMap(guessParams, input -> {
             repository.initGuessTask(input.getParcelableArrayList(KEY_CELLS),
                     input.getInt(KEY_COL_COUNT));
             return repository.getGuessesPagedMedLiveData();
-        };
+        });
 
-        Function<Bundle, LiveData<PagingData<Word>>> guessFuncPaging3 = input -> {
+        // Paging 3
+        guessesPaging3LiveData = Transformations.switchMap(guessParams, input -> {
             repository.initGuessTask(input.getParcelableArrayList(KEY_CELLS),
                     input.getInt(KEY_COL_COUNT));
             return PagingLiveData.cachedIn(
                     repository.getGuessesPaging3MedLiveData(),
                     ViewModelKt.getViewModelScope(GuessViewModel.this));
-        };
-
-        // No paging
-        guessesLiveData = Transformations.switchMap(guessParams, guessFunc);
-
-        // Paging 2
-        guessesPagedLiveData = Transformations.switchMap(guessParams, guessFuncPaging2);
-
-        // Paging 3
-        guessesPaging3LiveData = Transformations.switchMap(guessParams, guessFuncPaging3);
+        });
 
 
         Log.d(TAG_NAV, "GuessViewModel: guessParams=" + guessParams.getValue());

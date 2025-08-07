@@ -58,26 +58,24 @@ public class InputViewModel extends SavedStateAndroidViewModel {
 
         repository = new InputRepository(application);
 
-        Function<List<Integer>, LiveData<Event<List<Cell>>>> cellFunc = input -> {
+
+//        Function<Integer, LiveData<Event<String>>> randomWordFunc = size -> {
+//            repository.initRandomWordTask(getCells(), size);
+////            repository.getRandomWordBySize(size);
+//            return repository.getRandomWordMedLiveData();
+//        };
+
+
+        rawCellsLiveData = Transformations.switchMap(cellsParams, input -> {
             repository.initCreateCells(input.get(0), input.get(1));
             return repository.getCellsLiveData();
-        };
-
-        Function<Integer, LiveData<Event<String>>> randomWordFunc = size -> {
-            repository.initRandomWordTask(getCells(), size);
-//            repository.getRandomWordBySize(size);
-            return repository.getRandomWordMedLiveData();
-        };
-
-        Function<Bundle, LiveData<Event<String>>> randomWordFunc2 = input -> {
+        });
+//        randomWordLiveData = Transformations.switchMap(randomWordParam, randomWordFunc);
+        randomWordLiveData = Transformations.switchMap(randomWordParams, input -> {
             repository.initRandomWordTask(input.getParcelableArrayList(KEY_CELLS),
                     input.getInt(KEY_WORD_SIZE));
             return repository.getRandomWordMedLiveData();
-        };
-
-        rawCellsLiveData = Transformations.switchMap(cellsParams, cellFunc);
-//        randomWordLiveData = Transformations.switchMap(randomWordParam, randomWordFunc);
-        randomWordLiveData = Transformations.switchMap(randomWordParams, randomWordFunc2);
+        });
 
         Log.d(TAG_NAV, "InputViewModel: cellsLiveData=" + cellsLiveData);
 //        Log.d(TAG_NAV, "InputViewModel: cells=" + cellsLiveData.getValue());
