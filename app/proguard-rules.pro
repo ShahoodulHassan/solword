@@ -49,7 +49,8 @@
 -keepattributes SourceFile,LineNumberTable
 
 
-
+-dontwarn com.daimajia.easing.Glider
+-dontwarn com.daimajia.easing.Skill
 
 ##---------------------------------------------------------------------
 
